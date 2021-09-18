@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <link rel='stylesheet' href='css/style.css'>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://unpkg.com/typeit@8.0.3/dist/index.umd.js"></script>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="section">
+                <p id="blinkingText">> </p>
+
+                <a href='#secondSection' class="arrowButton">
+                    <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" height="50px" fill='white'><title>arrow-down</title><path d="M256,0C114.84,0,0,114.84,0,256S114.84,512,256,512,512,397.16,512,256,397.16,0,256,0Zm79.08,292.42-64,64a21.43,21.43,0,0,1-3.27,2.67c-.51.34-1.06.57-1.58.86A12.5,12.5,0,0,1,262,361.7c-.62.18-1.21.42-1.85.55a20.92,20.92,0,0,1-8.35,0c-.64-.13-1.23-.37-1.85-.55a12.5,12.5,0,0,1-4.22-1.76c-.53-.29-1.08-.52-1.58-.86a21.43,21.43,0,0,1-3.27-2.67l-64-64a21.33,21.33,0,1,1,30.17-30.17l27.58,27.58V128a21.33,21.33,0,0,1,42.67,0V289.83l27.58-27.58a21.33,21.33,0,1,1,30.17,30.17Z"/></svg>
+                </a>
+            </div>
+
+            <div class="section" id='secondSection'>
+                <button class="linkButton">Me</button>
+                <button class="linkButton">ME</button>
+                <button class="linkButton">ALSO ME!!</button>
+            </div>
+        </div>
+
+        <script>
+            new TypeIt("#blinkingText", {
+                speed: 80,
+                waitUntilVisible: true,
+            })
+            .type(" Smiopich", { delay: 300 })
+            .move(-5)
+            .delete(2)
+            .type("im")
+            .move(null, { to: "END" })
+            .type(": ")
+            .pause(300)
+            .type("Devel")
+            .pause(800)
+            .delete(5)
+            .type("Noobie Developer")
+            .pause(700)
+            .break({ delay: 500 })
+            .break({ delay: 500 })
+            .type(":)")
+            .go();
+        </script>
+    </body>
+</html>
