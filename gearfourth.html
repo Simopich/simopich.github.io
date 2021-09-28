@@ -1,11 +1,36 @@
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel='stylesheet' href='css/gearfourth.css'>
         <title>Gear Fourth: Bound Man.</title>
     </head>
     <body>
         <video id="v0" tabindex="0" autobuffer preload>
             <source type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"' src="vid/gearfourth.mp4"></source>
         </video>
+
+        <script>
+            var frameNumber = 0, // start video at frame 0
+                // lower numbers = faster playback
+                playbackConst = 1000, // Set to 1000 to make the playback slower
+                // get page height from video duration
+                setHeight = document.getElementById("set-height"),
+                // select video element         
+                vid = document.getElementById('v0');
+
+            // dynamically set the page height according to video length
+            vid.addEventListener('loadedmetadata', function () {
+                setHeight.style.height = Math.floor(vid.duration) * playbackConst + "px";
+            });
+
+            // Use requestAnimationFrame for smooth playback
+            function scrollPlay() {
+                var frameNumber = window.pageYOffset / playbackConst;
+                vid.currentTime = frameNumber;
+                window.requestAnimationFrame(scrollPlay);
+            }
+
+            window.requestAnimationFrame(scrollPlay);
+        </script>
     </body>
 </html>
