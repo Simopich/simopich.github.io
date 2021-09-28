@@ -1,7 +1,5 @@
 body {
-    background-color: #c6d7de;
-    font-family: sans-serif;
-    padding: 3em;
+    background-color: #151515;
 }
 
 #v0 {
@@ -9,4 +7,21 @@ body {
     bottom: 0;
     right: 0;
     width: 100%;
+}
+
+#set-height {
+    display: block;
+}
+
+section {
+    z-index: 1;
+    position: relative;
+}
+
+section:nth-of-type(1) {
+    height: 1000px;
+}
+
+section:nth-of-type(2) {
+    height: 1200px;
 }

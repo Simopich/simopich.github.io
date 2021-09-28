@@ -5,27 +5,35 @@
         <title>Gear Fourth: Bound Man.</title>
     </head>
     <body>
+        <section class="container">
+            <div class="content">
+                <h1>Scroll to Begin</h1>
+                <p>Start it like this...</p>
+            </div>
+        </section>
+        <section class="container">
+            <div class="content">
+                <h1>Scroll to Begin</h1>
+                <p>Start it like this...</p>
+            </div>
+        </section>
+
         <div id="set-height"></div>
-        
-        <video id="v0" tabindex="0" autobuffer preload>
+
+        <video id="video" tabindex="0" autobuffer preload>
             <source type='video/mp4' src="vid/gearfourth.mp4"></source>
         </video>
 
         <script>
-            var frameNumber = 0, // start video at frame 0
-                // lower numbers = faster playback
-                playbackConst = 1000, // Set to 1000 to make the playback slower
-                // get page height from video duration
-                setHeight = document.getElementById("set-height"),
-                // select video element         
-                vid = document.getElementById('v0');
+            var frameNumber = 0,
+                playbackConst = 500, // Playback Speed
+                setHeight = document.getElementById("set-height"),      
+                vid = document.getElementById('video');
 
-            // dynamically set the page height according to video length
             vid.addEventListener('loadedmetadata', function () {
                 setHeight.style.height = Math.floor(vid.duration) * playbackConst + "px";
             });
 
-            // Use requestAnimationFrame for smooth playback
             function scrollPlay() {
                 var frameNumber = window.pageYOffset / playbackConst;
                 vid.currentTime = frameNumber;
